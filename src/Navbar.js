@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { links, social } from './data';
-import logo from './logo.svg';
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -10,6 +9,7 @@ const Navbar = () => {
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };
+  
   useEffect(() => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (showLinks) {
@@ -18,6 +18,7 @@ const Navbar = () => {
       linksContainerRef.current.style.height = '0px';
     }
   }, [showLinks]);
+
   return (
     <nav>
       <div className='nav-center'>
